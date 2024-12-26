@@ -1,0 +1,266 @@
+.about {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 80px;
+    margin: 80px 170px;
+    opacity: 0;
+    transform: translateX(-100px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* Keyframes for slide-in animation */
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-100px); /* Start off-screen to the left */
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0); /* End at original position */
+    }
+}
+
+/* When the section is visible */
+.about.visible {
+    opacity: 1;
+    transform: translateX(0);
+    animation: slideInLeft 1s ease forwards;
+}
+
+.about-title {
+    position: relative;
+    width: 100%;
+}
+
+.about-title h1 {
+    padding: 0px 30px;
+    font-size: 80px;
+    font-weight: 600;
+}
+
+.about-title img {
+    position: absolute;
+    bottom: 0px;
+    z-index: -1;
+    object-fit: cover;
+}
+
+.about-sections {
+    display: flex;
+    gap: 80px;
+}
+.about-left img{
+    height: 500px;
+    width: 350px;
+}
+
+.about-right {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.about-para {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.about-skills {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.about-skill {
+    display: flex; /* Stack vertically */
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 5px;
+    transition: 0.3s ease;
+}
+
+.about-skill p {
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.about-skill hr {
+    outline: none;
+    border: none;
+    width: 50%; /* Full width beneath the text */
+    height: 6px;
+    border-radius: 50px;
+    background: linear-gradient(264deg, #DF8908 -5.09%, #B415FF 106.28%);
+    /* Add space between the text and the bar */
+}
+
+.about-skill:hover {
+    transform: scale(1.05);
+    transition: 0.3s;
+}
+
+.about-achievements {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    margin-bottom: 80px;
+}
+
+.about-achievement {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    transition: 0.5s ease;
+}
+
+.about-achievement:hover {
+    transform: scale(1.12);
+    transition: 0.5s;
+}
+
+.about-achievement h1 {
+    font-size: 60px;
+    font-weight: 700;
+    background: linear-gradient(270deg, #DF8908 50.4%, #B415FF 90.25%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.about-achievement p {
+    font-size: 22px;
+    font-weight: 500;
+    text-align: center;
+}
+
+/* Media Queries for Responsive Design */
+@media (max-width: 768px) {
+    .about {
+        gap: 50px;
+        margin: 0px 40px;
+        align-items: flex-start;
+
+    }
+    .about-left{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .about-title{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .about-title h1 {
+        font-size: 50px;
+        padding: 0;
+    }
+
+    .about-title img {
+        width: 130px;
+        
+        align-items: center;
+        justify-content: center;
+    }
+
+    .about-sections {
+        flex-direction: column;
+    }
+
+    .about-para {
+        font-size: 18px;
+        line-height: 28px;
+    }
+
+    .about-skill p {
+        font-size: 20px;
+    }
+
+    .about-skill hr {
+        height: 6px;
+    }
+
+    .about-achievements {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .about-achievement h1 {
+        font-size: 34px;
+        font-weight: 700;
+    }
+
+    .about-achievement p {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 400px) {
+    .about {
+        margin: 20px;
+        gap: 30px;
+    }
+
+    .about-title h1 {
+        font-size: 40px;
+    }
+
+    .about-title img {
+        width: 100px;
+        align-items: center;
+    }
+
+    .about-para {
+        font-size: 16px;
+    }
+
+    .about-skill p {
+        font-size: 18px;
+    }
+
+    .about-skill hr {
+        height: 4px;
+    }
+
+    .about-achievement h1 {
+        font-size: 28px;
+    }
+
+    .about-achievement p {
+        font-size: 14px;
+    }
+}
+
+/* For Ultra-wide Screens */
+@media (min-width: 1440px) {
+    .about {
+        margin: 80px 300px;
+    }
+
+    .about-title h1 {
+        font-size: 100px;
+    }
+
+    .about-para {
+        font-size: 28px;
+    }
+
+    .about-skill p {
+        font-size: 26px;
+    }
+
+    .about-achievement h1 {
+        font-size: 70px;
+    }
+
+    .about-achievement p {
+        font-size: 24px;
+    }
+}
